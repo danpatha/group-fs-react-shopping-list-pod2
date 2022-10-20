@@ -7,6 +7,7 @@ import Header from '../Header/Header.jsx';
 import './App.css';
 
 
+
 function App() {
     let [itemList, setItemList] = useState([]);
 
@@ -26,12 +27,24 @@ function App() {
             })
     }
 
+    const addItem = (newItem) =>{
+        axios.post('/items', newItem)
+        .then(response => {
+            
+            getItems();
+        })
+        .catch(err => {
+            alert('Error Adding Item');
+            console.log(err);
+        })
+    };
+
 
     return (
         <div className="App">
             <Header />
             <main>
-                <ItemForm />
+                <ItemForm addItem = {addItem} />
                 <h2>Add an Item</h2>
                 <form>
                     <label>Item</label>
