@@ -7,7 +7,6 @@ CREATE TABLE "shopping" (
 	"quantity" INT, 
 	"unit" varchar(20),
 	"purchased" BOOLEAN DEFAULT FALSE,
-	"purchased" BOOLEAN DEFAULT FALSE
 );
 
 INSERT INTO "shopping"
