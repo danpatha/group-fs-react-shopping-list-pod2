@@ -50,6 +50,7 @@ function App() {
                 <article>
                 <ItemList 
                     itemList={itemList}
+                    getItems={getItems}
                 />
 
                 </article>
