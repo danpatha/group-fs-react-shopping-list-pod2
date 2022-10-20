@@ -12,7 +12,7 @@ const pool = require('../modules/pool');
 //DELETE items
 
 
-//POST
+//POST items
 
 
 
