@@ -30,7 +30,7 @@ function App() {
     const addItem = (newItem) =>{
         axios.post('/items', newItem)
         .then(response => {
-            
+            console.log(response);
             getItems();
         })
         .catch(err => {

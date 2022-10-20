@@ -22,7 +22,7 @@ function ItemForm({addItem}){
                 <input onChange={(event)=> setItem(event.target.value)}type="text" required placeholder="Item"></input>
 
                 <label>Quantity</label>
-                <input onChange={(event)=> setQuantity(event.target.value)} type="text" required placeholder="Quantity needed"></input>
+                <input onChange={(event)=> setQuantity(event.target.value)} type="number" required placeholder="Quantity needed"></input>
 
                 <label>Unit</label>
                 <input onChange={(event)=> setUnit(event.target.value)} type="text" required placeholder="Unit"></input>
