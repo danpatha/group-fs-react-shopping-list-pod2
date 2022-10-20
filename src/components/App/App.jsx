@@ -51,8 +51,9 @@ function App() {
 
                 <article>
                 <ItemList 
+
+                    itemList={itemList}
                     getItems={getItems}
-                    itemList={itemList} 
                 />
 
                 </article>

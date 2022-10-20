@@ -21,6 +21,7 @@ function ItemBox({itemList, getItems}){
         axios.delete(`/items/${itemId}`)
             .then((response) => {
                 console.log('the delete response is', response)
+                getItems();
             })
             .catch(err=>{
                 console.error('in delete item error');

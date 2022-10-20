@@ -38,7 +38,20 @@ const sqlText = `INSERT INTO shopping ("name", "quantity", "unit")
 })
 
 //DELETE items
+router.delete('/:id', (req, res) => {
+    const sqlText =` DELETE FROM "shopping"
+                    WHERE id = $1`;
+    const sqlParams = [req.params.id];
 
+    pool.query(sqlText, sqlParams)
+        .then((dbRes) => {
+            res.sendStatus(200);
+        })
+        .catch((err) => {
+            console.log('error in delete', err);
+            res.sendStatus(500);
+        });
+})
 
 //PUT items
 router.put('/:id', (req,res) => {
