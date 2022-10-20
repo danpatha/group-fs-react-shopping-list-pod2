@@ -1,6 +1,6 @@
 import axios from "axios";
 
-function ItemBox({itemList}){
+function ItemBox({itemList, getItems}){
     // {itemList.map(item => )}
     // console.log('the item id is', itemList[0].id)
 
@@ -10,6 +10,7 @@ function ItemBox({itemList}){
         axios.delete(`/items/${itemId}`)
             .then((response) => {
                 console.log('the delete response is', response)
+                getItems();
             })
     }
 
