@@ -39,6 +39,8 @@ function App() {
         })
     };
 
+   
+
 
     return (
         <div className="App">
@@ -49,7 +51,9 @@ function App() {
 
                 <article>
                 <ItemList 
+
                     itemList={itemList}
+                    getItems={getItems}
                 />
 
                 </article>

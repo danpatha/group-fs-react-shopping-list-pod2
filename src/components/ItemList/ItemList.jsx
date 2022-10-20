@@ -1,6 +1,6 @@
 import ItemBox from '../ItemBox/ItemBox'
 
-function ItemList({itemList}){
+function ItemList({itemList, getItems}){
 
     return(
         <>
@@ -11,7 +11,10 @@ function ItemList({itemList}){
             </header>
             <section>
                 <ItemBox
-                itemList={itemList}
+
+                getItems={getItems}
+                itemList={itemList} 
+
                 />
                 <div className="listItem">
                     <h4>Apple Jacks</h4>

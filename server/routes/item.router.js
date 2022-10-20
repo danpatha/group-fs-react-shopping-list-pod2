@@ -6,10 +6,10 @@ const pool = require('../modules/pool');
 // GET items
 router.get('/', (req, res) => {
 
-    const sqlText = `SELECT * FROM shopping;`;
+    const sqlText = `SELECT * FROM shopping ORDER BY UPPER (name) ASC;`;
     pool.query(sqlText)
         .then((result) => {
-            console.log('got stuff back from the database', result);
+            // console.log('got stuff back from the database', result);
             res.send(result.rows);
         })
         .catch((error) => {
@@ -38,9 +38,37 @@ const sqlText = `INSERT INTO shopping ("name", "quantity", "unit")
 })
 
 //DELETE items
+router.delete('/:id', (req, res) => {
+    const sqlText =` DELETE FROM "shopping"
+                    WHERE id = $1`;
+    const sqlParams = [req.params.id];
 
+    pool.query(sqlText, sqlParams)
+        .then((dbRes) => {
+            res.sendStatus(200);
+        })
+        .catch((err) => {
+            console.log('error in delete', err);
+            res.sendStatus(500);
+        });
+})
 
-//POST items
+//PUT items
+router.put('/:id', (req,res) => {
+    const purchased = req.params.id;
+    const sqlText = `UPDATE "shopping"
+                SET "purchased" = TRUE
+                WHERE "id" = $1`;
+                pool.query(sqlText, [purchased])
+                    .then((dbRes) => {
+                        res.sendStatus(201)
+                    })
+                    .catch(err=>{
+                    console.log('in /:id PUT', error);
+                    res.sendStatus(500);
+                    });
+})
+
 
 
 
