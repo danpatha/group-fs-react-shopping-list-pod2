@@ -5,6 +5,7 @@ import ItemForm from '../ItemForm/ItemForm';
 import ItemList from '../ItemList/ItemList';
 import Header from '../Header/Header.jsx';
 import './App.css';
+import { response } from 'express';
 
 
 function App() {
@@ -26,12 +27,24 @@ function App() {
             })
     }
 
+    const addItem = (newItem) =>{
+        axios.post('/items', newItem)
+        .then(response => {
+            
+            getItems();
+        })
+        .catch(err => {
+            alert('Error Adding Item');
+            console.log(err);
+        })
+    };
+
 
     return (
         <div className="App">
             <Header />
             <main>
-                <ItemForm />
+                <ItemForm addItem = {addItem} />
                 <h2>Add an Item</h2>
                 <form>
                     <label>Item</label>
