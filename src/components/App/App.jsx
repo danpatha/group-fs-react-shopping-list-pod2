@@ -48,27 +48,10 @@ function App() {
                 <ItemForm addItem = {addItem} />
 
                 <article>
-                <ItemList />
-                    <header>
-                        <h2>Shopping List</h2>
-                        <button id="resetBtn">Reset</button>
-                        <button id="clearBtn">Clear</button>
-                    </header>
+                <ItemList 
+                    itemList={itemList}
+                />
 
-                    <section>
-                        <div class="listItem">
-                            <h4>Pineapple</h4>
-                            <p>5 lbs</p>
-                            <button class="purchasedBtn">Purchased</button>
-                            <button class="removeBtn">Remove</button>
-                        </div>
-                        <div class="listItem">
-                            <h4>Apple Jacks</h4>
-                            <p>3 boxes</p>
-                            <button class="purchasedBtn">Purchased</button>
-                            <button class="removeBtn">Remove</button>
-                        </div>
-                    </section>
                 </article>
             <footer>
                 <p>Created by Pod 2 on October 20th, 2022 at Prime Digital Academy</p>
