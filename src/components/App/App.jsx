@@ -44,18 +44,8 @@ function App() {
         <div className="App">
             <Header />
             <main>
+
                 <ItemForm addItem = {addItem} />
-                <h2>Add an Item</h2>
-                <form>
-                    <label>Item</label>
-                    <input type="text" required placeholder="Item"></input>
-
-                    <label>Quantity</label>
-                    <input type="text" required placeholder="Quantity needed"></input>
-
-                    <label>Unit</label>
-                    <input type="text" required placeholder="Unit"></input>
-                </form>
 
                 <article>
                 <ItemList />
