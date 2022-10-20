@@ -8,7 +8,7 @@ function ItemForm({addItem}){
     const handleSubmit = (evt)=>{
         evt.preventDefault();
         addItem({
-            item: item,
+            name: item,
             quantity: quantity,
             unit: unit,
         });

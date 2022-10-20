@@ -2,6 +2,7 @@
 -- It is also helpful to include some test data
 
 DROP TABLE IF EXISTS "shopping";
+
 CREATE TABLE "shopping" (
 	"id" SERIAL PRIMARY KEY,
 	"name" varchar(80),
