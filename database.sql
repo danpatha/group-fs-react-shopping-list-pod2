@@ -7,9 +7,10 @@ CREATE TABLE "shopping" (
 	"id" SERIAL PRIMARY KEY,
 	"name" varchar(80),
 	"quantity" INT, 
-	"unit" varchar(20)
+	"unit" varchar(20),
+	"purchased" BOOLEAN DEFAULT FALSE
 );
 
 INSERT INTO "shopping"
-	("name", "quantity", "unit")
-VALUES ('Potatoes', '4', '2 lbs');
+	("name", "quantity", "unit", "purchased")
+VALUES ('Potatoes', '4', '2 lbs', 'false');
