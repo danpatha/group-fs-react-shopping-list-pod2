@@ -4,6 +4,17 @@ function ItemBox({itemList, getItems}){
     // {itemList.map(item => )}
     // console.log('the item id is', itemList[0].id)
 
+    const purchaseItem  = (evt) =>{
+        axios.put(`/items/${evt.target.id}`)
+        .then((response) => {
+            console.log(response);
+            getItems();
+        })
+        .catch(err => {
+            alert('Error in purchasing Item');
+            console.log(err);
+        });
+    }
     const deleteItem = (evt) => {
         console.log('in deleteItem function', evt.target.id);
         let itemId = evt.target.id
@@ -12,6 +23,9 @@ function ItemBox({itemList, getItems}){
                 console.log('the delete response is', response)
                 getItems();
             })
+            .catch(err=>{
+                console.error('in delete item error');
+            });
     }
 
     return(
@@ -24,7 +38,11 @@ function ItemBox({itemList, getItems}){
                 <h4>{item.name} </h4>
                 <p>{item.quantity} </p>
                 <p>{item.unit}</p>
-                <button className="purchasedBtn">Purchased</button>
+                <button 
+                id={item.id}
+                onClick={purchaseItem}
+                className="purchasedBtn"
+                >Purchased</button>
                 <button 
                 className="removeBtn" 
                 id = {item.id}

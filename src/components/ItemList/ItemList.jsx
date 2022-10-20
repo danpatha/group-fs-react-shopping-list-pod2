@@ -11,8 +11,10 @@ function ItemList({itemList, getItems}){
             </header>
             <section>
                 <ItemBox
-                itemList={itemList}
+
                 getItems={getItems}
+                itemList={itemList} 
+
                 />
                 <div className="listItem">
                     <h4>Apple Jacks</h4>
