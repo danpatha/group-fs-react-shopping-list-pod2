@@ -1,6 +1,17 @@
-
+import axios from "axios";
 
 function ItemBox({itemList}){
+    // {itemList.map(item => )}
+    // console.log('the item id is', itemList[0].id)
+
+    const deleteItem = (evt) => {
+        console.log('in deleteItem function', evt.target.id);
+        let itemId = evt.target.id
+        axios.delete(`/items/${itemId}`)
+            .then((response) => {
+                console.log('the delete response is', response)
+            })
+    }
 
     return(
         <>
@@ -13,7 +24,12 @@ function ItemBox({itemList}){
                 <p>{item.quantity} </p>
                 <p>{item.unit}</p>
                 <button className="purchasedBtn">Purchased</button>
-                <button className="removeBtn">Remove</button>
+                <button 
+                className="removeBtn" 
+                id = {item.id}
+                onClick = {deleteItem}>Remove</button>
+                
+                    
             </div>
         ))}
         </>
