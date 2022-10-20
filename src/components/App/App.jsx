@@ -1,6 +1,8 @@
 import React from 'react';
 
-import Header from '../Header/Header.jsx'
+import ItemForm from '../ItemForm/ItemForm';
+import ItemList from '../ItemList/ItemList';
+import Header from '../Header/Header.jsx';
 import './App.css';
 
 
@@ -9,6 +11,7 @@ function App() {
         <div className="App">
             <Header />
             <main>
+                <ItemForm />
                 <h2>Add an Item</h2>
                 <form>
                     <label>Item</label>
@@ -22,6 +25,7 @@ function App() {
                 </form>
 
                 <article>
+                <ItemList />
                     <header>
                         <h2>Shopping List</h2>
                         <button id="resetBtn">Reset</button>
