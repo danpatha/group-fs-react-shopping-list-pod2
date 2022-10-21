@@ -30,7 +30,9 @@ function ItemBox({itemList, getItems}){
 
     return(
         <>
-        {itemList.map(item => (
+        {itemList.map(item => {
+            if(item.purchased === false){
+                return (
             <div 
                 className="listItem"
                 key={item.id}       
@@ -47,10 +49,20 @@ function ItemBox({itemList, getItems}){
                 className="removeBtn" 
                 id = {item.id}
                 onClick = {deleteItem}>Remove</button>
-                
-                    
             </div>
-        ))}
+        )};
+        return(
+                <div 
+                    className="listItem"
+                    key={item.id}       
+                >
+                    <h4>{item.name} </h4>
+                    <p>{item.quantity} </p>
+                    <p>{item.unit}</p>
+                    <h4>Purchased!!!</h4>
+                </div>
+            );
+        })}
         </>
     );
 }
