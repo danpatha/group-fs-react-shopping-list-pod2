@@ -5,7 +5,11 @@ function ItemList({itemList, getItems}){
 
     return(
         <>
-            <ShoppingButtons getItems = {getItems}/>
+
+            <ShoppingButtons 
+                getItems={getItems}
+            />
+
             <section>
                 <ItemBox
 

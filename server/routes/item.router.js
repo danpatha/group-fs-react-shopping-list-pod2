@@ -86,7 +86,20 @@ router.put('/:id', (req,res) => {
                     });
 })
 
-
+//RESET ITEMS
+router.put('/', (req, res) => {
+    const sqlText = `UPDATE "shopping" 
+                    SET "purchased" = FALSE
+                    WHERE "purchased" = TRUE;`
+            pool.query(sqlText)
+                .then((dbRes) =>{
+                    res.sendStatus(201);
+                })
+                .catch((err) => {
+                    console.log('in /PUT', err)
+                    res.sendStatus(500);
+                });
+})
 
 
 module.exports = router;

@@ -1,7 +1,19 @@
-import axios from "axios";
+
+import axios from 'axios';
 
 function ShoppingButtons({getItems}){
 
+    const resetItems = () => {
+        axios.put('/items')
+        .then((response) => {
+            console.log(response)
+            getItems();
+        })
+        .catch((err) => {
+            alert('error in reset PUT')
+            console.log(err);
+        });
+    }
 
     const deleteAll = () => {
         console.log('in deleteAll function');
@@ -16,11 +28,17 @@ function ShoppingButtons({getItems}){
 
     }
 
+
     return (
     <header>
         <h2>Shopping List</h2>
-        <button id="resetBtn">Reset</button>
+
+        <button 
+            id="resetBtn"
+            onClick={resetItems}
+        >Reset</button>
         <button id="clearBtn" onClick = {deleteAll}>Clear</button>
+
     </header>
     )
 }
