@@ -31,14 +31,15 @@ function ItemBox({itemList, getItems}){
 
     return(
         <>
-        {itemList.map(item => (
+        {itemList.map(item => {
+            if(item.purchased === false){
+                return (
             <div 
                 className="listItem"
                 key={item.id}       
             >
                 <h4>{item.name} </h4>
-                <p>{item.quantity} </p>
-                <p>{item.unit}</p>
+                <p>{item.quantity} {item.unit}</p>
                 <button 
                 id={item.id}
                 onClick={purchaseItem}
@@ -48,10 +49,22 @@ function ItemBox({itemList, getItems}){
                 className="removeBtn" 
                 id = {item.id}
                 onClick = {deleteItem}>Remove</button>
-                
-                    
             </div>
-        ))}
+        )};
+        return(
+                <div 
+                    key={item.id} 
+                    className="green"      
+                >
+                    <h4><strike>{item.name}</strike></h4>
+                    <p><strike>{item.quantity} {item.unit}</strike></p>
+                    <button 
+                className="removeBtn" 
+                id = {item.id}
+                onClick = {deleteItem}>Remove</button>
+                </div>
+            );
+        })}
         </>
     );
 }
