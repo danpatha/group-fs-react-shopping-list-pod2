@@ -1,4 +1,5 @@
 import axios from "axios";
+import './ItemBox.css';
 
 function ItemBox({itemList, getItems}){
     // {itemList.map(item => )}
