@@ -6,7 +6,7 @@ const pool = require('../modules/pool');
 // GET items
 router.get('/', (req, res) => {
 
-    const sqlText = `SELECT * FROM "shopping" ORDER BY purchased ASC, name ASC;                `;
+    const sqlText = `SELECT * FROM "shopping" ORDER BY purchased ASC, UPPER (name) ASC;`;
     pool.query(sqlText)
         .then((result) => {
             // console.log('got stuff back from the database', result);
