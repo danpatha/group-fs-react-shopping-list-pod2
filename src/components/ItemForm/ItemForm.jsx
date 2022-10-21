@@ -12,6 +12,9 @@ function ItemForm({addItem}){
             quantity: quantity,
             unit: unit,
         });
+        setItem('');
+        setQuantity('');
+        setUnit('');
     }
 
     return(
@@ -19,13 +22,16 @@ function ItemForm({addItem}){
             <h2>Add an Item</h2>
             <form onSubmit={handleSubmit}>
                 <label>Item</label>
-                <input onChange={(event)=> setItem(event.target.value)}type="text" required placeholder="Item"></input>
+                <input onChange={(event)=> setItem(event.target.value)}type="text" required placeholder="Item"
+                value = {item}></input>
 
                 <label>Quantity</label>
-                <input onChange={(event)=> setQuantity(event.target.value)} type="number" required placeholder="Quantity needed"></input>
+                <input onChange={(event)=> setQuantity(event.target.value)} type="number" required placeholder="Quantity needed"
+                value = {quantity}></input>
 
                 <label>Unit</label>
-                <input onChange={(event)=> setUnit(event.target.value)} type="text" required placeholder="Unit"></input>
+                <input onChange={(event)=> setUnit(event.target.value)} type="text" required placeholder="Unit"
+                value = {unit}></input>
                 <button type="submit">Add Item</button>
             </form>
         </>
