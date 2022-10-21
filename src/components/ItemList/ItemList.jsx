@@ -1,14 +1,11 @@
 import ItemBox from '../ItemBox/ItemBox'
+import ShoppingButtons from '../ShoppingButtons/ShoppingButtons';
 
 function ItemList({itemList, getItems}){
 
     return(
         <>
-            <header>
-                <h2>Shopping List</h2>
-                <button id="resetBtn">Reset</button>
-                <button id="clearBtn">Clear</button>
-            </header>
+            <ShoppingButtons />
             <section>
                 <ItemBox
 
