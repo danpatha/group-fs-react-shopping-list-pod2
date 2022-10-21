@@ -53,6 +53,15 @@ router.delete('/:id', (req, res) => {
         });
 })
 
+
+// DELETE all 
+router.delete('/', (req, res) => {
+    const sqlText = `DELETE * FROM "shopping"`;
+    
+    pool.query(sqlText)
+})
+
+
 //PUT items
 router.put('/:id', (req,res) => {
     const purchased = req.params.id;
