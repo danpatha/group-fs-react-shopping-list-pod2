@@ -38,8 +38,7 @@ function ItemBox({itemList, getItems}){
                 key={item.id}       
             >
                 <h4>{item.name} </h4>
-                <p>{item.quantity} </p>
-                <p>{item.unit}</p>
+                <p>{item.quantity} {item.unit}</p>
                 <button 
                 id={item.id}
                 onClick={purchaseItem}
@@ -53,13 +52,15 @@ function ItemBox({itemList, getItems}){
         )};
         return(
                 <div 
-                    className="listItem"
-                    key={item.id}       
+                    key={item.id} 
+                    className="green"      
                 >
-                    <h4>{item.name} </h4>
-                    <p>{item.quantity} </p>
-                    <p>{item.unit}</p>
-                    <h4>Purchased!!!</h4>
+                    <h4><strike>{item.name}</strike></h4>
+                    <p><strike>{item.quantity} {item.unit}</strike></p>
+                    <button 
+                className="removeBtn" 
+                id = {item.id}
+                onClick = {deleteItem}>Remove</button>
                 </div>
             );
         })}
