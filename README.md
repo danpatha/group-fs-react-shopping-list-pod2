@@ -13,6 +13,7 @@ The group of students worked on pair coding and organizing of equal work. Studen
 
 ## Screen Shot
 
+<img src="S.png" >
 
 
 ### Prerequisites

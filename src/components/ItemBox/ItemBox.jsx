@@ -1,6 +1,7 @@
 import axios from "axios";
 import './ItemBox.css';
 
+
 function ItemBox({itemList, getItems}){
     // {itemList.map(item => )}
     // console.log('the item id is', itemList[0].id)
