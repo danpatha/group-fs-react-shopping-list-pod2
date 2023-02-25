@@ -46,4 +46,6 @@ A client will be able to create a shopping list by adding items with their corre
 Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. 
 
 ## Connect/Support 
-If you have you'd like to connect or have questions, please connect with group members on LinkedIn at [Sam Phipps](https://www.linkedin.com/in/sam-v-phipps/), [Astrid Pulse](https://www.linkedin.com/in/astrid-pulse/), [Noelani West](https://www.linkedin.com/in/noelaniwest/), and [Dan Pathammavong](https://www.linkedin.com/in/danielpatha/)
+If you have you'd like to connect or have questions, please connect with group members on LinkedIn at [Sam Phipps](https://www.linkedin.com/in/sam-v-phipps/), [Astrid Pulse](https://www.linkedin.com/in/astrid-pulse/), [Noelani West](https://www.linkedin.com/in/noelaniwest/), and [Dan Pathammavong](https://www.linkedin.com/in/danpatha/)
+
+Checkout the project's related Linkedin post: [Here.](https://www.linkedin.com/feed/update/urn:li:activity:6990667582903107584/)
