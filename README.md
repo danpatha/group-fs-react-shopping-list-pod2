@@ -1,5 +1,5 @@
-# PROJECT NAME
-React Shopping List 
+# React Shopping List
+ 
 
 ## Description
 
